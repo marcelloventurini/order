@@ -37,6 +37,11 @@ public class OrderItem {
     }
 
     public double calculateSubTotal() {
-        return quantity * price;
+        return quantity * product.getPrice();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("\n%s; R$%.2f; Quantity: %d; Subtotal: R$%.2f", product.getName(), product.getPrice(), quantity, calculateSubTotal());
     }
 }
